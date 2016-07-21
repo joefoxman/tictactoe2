@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Game Engine</title>
+	    <link href="Content/bootstrap.css" rel="stylesheet">
+		<link href="Content/styles.css" rel="stylesheet">
+
+		<script src="Scripts/jquery-2.2.3.js"></script>
+	    <script src="Scripts/bootstrap.js"></script>
+	    <script src="Scripts/modernizr-2.8.3.js"></script>
+	    <script src="Scripts/tictactoe.js"></script>
+	</head>
+	<body>
+		<div id="page-content-wrapper">
+		    <div class="container-fluid">
+		        <div class="body-content">
+		            <div class="tab-body-content bottom-spacer-sm">
+			            <table id="board">
+			            	<tr>
+			            		<td id="1"></td>
+			            		<td id="2"></td>
+			            		<td id="3"></td>
+			            	</tr>
+			            	<tr>
+			            		<td id="4"></td>
+			            		<td id="5"></td>
+			            		<td id="6"></td>
+			            	</tr>
+			            	<tr>
+			            		<td id="7"></td>
+			            		<td id="8"></td>
+			            		<td id="9"></td>
+			            	</tr>
+			            </table>
+						<label id="first-player-label" class="align-middle" for="first-player">Choose First Player</label>
+						<select class="form-control align-middle" id="first-player">
+							<option value="x">X</option>
+							<option value="o">O</option>
+						</select>
+			            <button id="reset-game" class="btn btn-primary align-middle">New Game</button>
+			            <p class="align-middle" id="game-winner"></p>
+		            </div>
+		            <footer>
+		                <p>© 2016 - Joey Fox</p>
+		            </footer>
+		        </div>
+		    </div>
+		</div>
+	</body>
+</html>
+
+
+<div class="modal fade" id="noMoveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content panel-warning">
+                <div class="modal-header panel-heading modal-header-warning">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Box already taken!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You must choose another box, this one is already taken.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content panel-warning">
+                <div class="modal-header panel-heading modal-header-warning">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">You Won!</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="winner-text"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="itsaDawModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content panel-warning">
+                <div class="modal-header panel-heading modal-header-warning">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Its a draw!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Too bad! It's a draw...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
